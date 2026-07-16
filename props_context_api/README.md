@@ -146,3 +146,4 @@ function Profile() {
 **Prop Drilling = Parent ➜ Child ➜ Child ➜ Child 😫**
 
 **Context API = Global Data 📦 (Direct Access)**
+
