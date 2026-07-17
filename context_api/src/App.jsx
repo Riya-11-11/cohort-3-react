@@ -4,6 +4,7 @@ import { LanguageContext } from "./context/LanguageContext";
 import { ThemeContext } from "./context/ThemeContext";
 import { MyStore } from "./context/StoreContext";
 import { ArrContext } from "./context/ArrayContext";
+import { ObjectArr } from "./context/ObjectArrContext";
 
 const App = () => {
   const language = useContext(LanguageContext);
@@ -11,6 +12,7 @@ const App = () => {
   // const user = useContext(MyStore);
   const { name, age, city, college, semester } = useContext(MyStore); //destructure way
   const arr = useContext(ArrContext);
+  const Obj = useContext(ObjectArr);
   return (
     <div>
       <h2>Theme: {theme}</h2>
@@ -25,11 +27,14 @@ const App = () => {
           console.log(val);
         })}
       </h3> */}
-      <h3>
-        {arr.map((val, index) => (
-          <p key={index}>{val}</p>
-        ))}
-      </h3>
+
+      {arr.map((val, index) => (
+        <p key={index}>{val}</p>
+      ))}
+
+      {Obj.map((val) => (
+        <p key={val.id}>{val.name}</p>
+      ))}
     </div>
   );
 };

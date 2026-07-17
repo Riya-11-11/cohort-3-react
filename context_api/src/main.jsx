@@ -5,6 +5,7 @@ import { LanguageContext } from "./context/LanguageContext.jsx";
 import { ThemeContext } from "./context/ThemeContext.jsx";
 import { MyStore } from "./context/StoreContext.jsx";
 import { ArrContext } from "./context/ArrayContext.jsx";
+import { ObjectArr } from "./context/ObjectArrContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <LanguageContext.Provider value="English">
@@ -19,7 +20,15 @@ createRoot(document.getElementById("root")).render(
         }}
       >
         <ArrContext.Provider value={["React", "Node", "MongoDB"]}>
-          <App />
+          <ObjectArr.Provider
+            value={[
+              { id: 1, name: "Riya" },
+              { id: 2, name: "Rahul" },
+              { id: 3, name: "Priya" },
+            ]}
+          >
+            <App />
+          </ObjectArr.Provider>
         </ArrContext.Provider>
       </MyStore.Provider>
     </ThemeContext.Provider>
