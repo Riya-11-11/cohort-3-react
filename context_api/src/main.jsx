@@ -6,6 +6,7 @@ import { ThemeContext } from "./context/ThemeContext.jsx";
 import { MyStore } from "./context/StoreContext.jsx";
 import { ArrContext } from "./context/ArrayContext.jsx";
 import { ObjectArr } from "./context/ObjectArrContext.jsx";
+import { ToggleProvider } from "./context/ThemeToggleContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <LanguageContext.Provider value="English">
@@ -27,7 +28,9 @@ createRoot(document.getElementById("root")).render(
               { id: 3, name: "Priya" },
             ]}
           >
-            <App />
+            <ToggleProvider>
+                <App />
+            </ToggleProvider>
           </ObjectArr.Provider>
         </ArrContext.Provider>
       </MyStore.Provider>
